@@ -33,6 +33,12 @@ jobs:
       run: |
         # simple flake8 run
         flake8 
+    - name: Upload covergae reports to Codecov
+      uses: codecov/codecov-action@v5
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        fail_ci_if_error: true
+        files: coverage.xml
     - name: Test with pytest
       run: |
         pytest
