@@ -27,7 +27,7 @@ jobs:
         python -m pip install .[dev]
     - name: Run coverage
       run: |
-        pytest --cov-config=.coveragerc --cov=./ci_course --cov-report=xml
+        pytest --cov-config=.coveragerc --cov-branch --cov=./ci_course --cov-report=xml
         cat coverage.xml
 
     - name: Upload coverage report to Codecov
